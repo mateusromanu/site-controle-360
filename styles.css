@@ -1,0 +1,887 @@
+/*
+ * Google Fonts:
+ * - 'Roboto': Para o texto principal, garantindo legibilidade e modernidade.
+ * - 'Oswald': Para títulos e cabeçalhos, adicionando um toque de força e impacto.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    /* Paleta de Cores */
+    --cor-primaria: #007bff; /* Azul vibrante, para títulos e botões */
+    --cor-secundaria: #0056b3; /* Azul escuro, para hover e detalhes */
+    --cor-fundo: #f4f7f9; /* Cinza claro, para o fundo do corpo */
+    --cor-texto-principal: #333; /* Cinza escuro, para o texto */
+    --cor-texto-claro: #ffffff; /* Branco, para texto em fundo escuro */
+    --cor-cinza-claro: #eee; /* Cinza bem claro, para divisórias e bordas */
+}
+
+/* Reset básico e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+}
+
+/* --------------------
+ * Layout e Estrutura
+ * -------------------- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main {
+    padding-top: 80px; /* Evita que o conteúdo principal fique atrás do header fixo */
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section:nth-of-type(odd) {
+    background-color: #ffffff;
+}
+
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* --------------------
+ * Cabeçalho (Header)
+ * -------------------- */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para telas pequenas */
+}
+
+header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8em;
+    color: var(--cor-texto-claro);
+    margin: 0;
+}
+
+header nav a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--cor-cinza-claro);
+}
+
+/* --------------------
+ * Seções da Página
+ * -------------------- */
+
+/* Seção de apresentação */
+#apresentacao {
+    padding-top: 100px; /* Espaço extra para o topo da página */
+    background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.8)), url('https://br.freepik.com/fotos-gratis/ar-condicionado-montado-numa-parede-branca_17580781.htm#fromView=search&page=1&position=0&uuid=ab0d96f2-c480-4a67-8327-a4604f5e8cda&query=Ar+Condicionado') no-repeat center center/cover;
+    color: var(--cor-texto-claro);
+    padding: 100px 20px;
+}
+
+#apresentacao h2 {
+    color: var(--cor-texto-claro);
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#apresentacao p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+/* Seção de serviços */
+#servicos ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+#servicos li {
+    background-color: var(--cor-cinza-claro);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#servicos li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+#servicos li strong {
+    color: var(--cor-primaria);
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Seção de diferenciais */
+.diferenciais-lista {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.diferenciais-lista p {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 250px;
+}
+
+/* Seção de chamada para ação (CTA) */
+#cta {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+}
+
+#cta h2, #cta p {
+    color: var(--cor-texto-claro);
+}
+
+.botao-cta {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    margin: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.botao-cta:hover {
+    background-color: var(--cor-texto-principal);
+    transform: translateY(-3px);
+}
+
+/* --------------------
+ * Rodapé (Footer)
+ * -------------------- */
+footer {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Botão Flutuante do WhatsApp */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2faa5c; /* Cor oficial do WhatsApp */
+    color: var(--cor-texto-claro);
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp:hover {
+    transform: scale(1.05);
+}
+
+/* --------------------
+ * Responsividade
+ * -------------------- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header nav a {
+        margin: 0 10px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    #apresentacao {
+        padding: 80px 20px;
+    }
+
+    #apresentacao h2 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header nav a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* Serviços */
+/* --------------------
+ * Estilização Específica da Página de Serviços
+ * -------------------- */
+
+/* Seção de cabeçalho da página de serviços */
+#servicos-header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 80px 20px 40px;
+    text-align: center;
+}
+
+#servicos-header h2 {
+    color: var(--cor-texto-claro);
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#servicos-header p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilização para cada item de serviço */
+.servico-item {
+    display: flex;
+    flex-wrap: wrap; /* Para alinhar em colunas em telas pequenas */
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 20px;
+}
+
+/* Alterna a ordem dos blocos (imagem/texto) em seções alternadas */
+.servico-item:nth-child(even) {
+    flex-direction: row-reverse;
+    background-color: #fff;
+}
+
+.servico-item:nth-child(odd) {
+    background-color: var(--cor-fundo);
+}
+
+.servico-ilustracao {
+    flex: 1;
+    max-width: 450px;
+    text-align: center;
+}
+
+.servico-ilustracao img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.servico-conteudo {
+    flex: 2;
+    max-width: 600px;
+    text-align: left;
+}
+
+.servico-conteudo h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    color: var(--cor-secundaria);
+    margin-bottom: 15px;
+}
+
+.servico-conteudo ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.servico-conteudo ul li {
+    background-color: var(--cor-cinza-claro);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Linha divisória */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--cor-cinza-claro);
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* CTA na página de serviços */
+#cta-servicos {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#cta-servicos h3, #cta-servicos p {
+    color: var(--cor-texto-claro);
+}
+
+#cta-servicos h3 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* --------------------
+ * Responsividade para a Página de Serviços
+ * -------------------- */
+@media (max-width: 900px) {
+    .servico-item {
+        flex-direction: column;
+    }
+
+    .servico-item:nth-child(even) {
+        flex-direction: column; /* Desativa a alternância de ordem em telas pequenas */
+    }
+
+    .servico-conteudo {
+        text-align: center;
+    }
+}
+
+/* Sobre */
+/* --------------------
+ * Estilização Específica da Página "Sobre Nós"
+ * -------------------- */
+
+/* Estilo geral das seções de conteúdo */
+#sobre-nos, #nossa-missao, #parceiro-ideal {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+#nossa-missao, #parceiro-ideal {
+    background-color: #fff;
+}
+
+#sobre-nos {
+    padding-top: 100px; /* Para não ficar atrás do header fixo */
+}
+
+/* Seção de Valores */
+#nossos-valores {
+    padding: 60px 20px;
+    background-color: var(--cor-fundo);
+}
+
+#nossos-valores h2 {
+    margin-bottom: 40px;
+}
+
+.lista-valores {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.lista-valores div {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lista-valores div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.lista-valores h3 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--cor-primaria);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.lista-valores p {
+    color: var(--cor-texto-principal);
+}
+
+/* CTA no final da página */
+#parceiro-ideal {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 60px 20px;
+}
+
+#parceiro-ideal p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+/* --------------------
+ * Responsividade para a Página "Sobre Nós"
+ * -------------------- */
+@media (max-width: 768px) {
+    .lista-valores {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Portifolio */
+/* --------------------
+ * Estilização Específica da Página de Portfólio
+ * -------------------- */
+
+/* Seção principal do Portfólio */
+#portfolio {
+    padding: 100px 20px 60px;
+    text-align: center;
+}
+
+#portfolio h2 {
+    margin-bottom: 10px;
+}
+
+#portfolio p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Galeria de imagens do Portfólio */
+.galeria-portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    color: var(--cor-texto-claro);
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .item-overlay {
+    transform: translateY(0);
+}
+
+.item-overlay h3 {
+    color: var(--cor-texto-claro);
+    margin: 0 0 5px;
+    font-size: 1.2em;
+}
+
+.item-overlay p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Seção de Depoimentos */
+#depoimentos {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.container-depoimentos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.depoimento-card {
+    background-color: #fff;
+    padding: 30px;
+    border-left: 5px solid var(--cor-primaria);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    flex: 1;
+    text-align: left;
+}
+
+.depoimento-card p {
+    font-style: italic;
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.depoimento-card span {
+    font-weight: 700;
+    color: var(--cor-secundaria);
+}
+
+/* CTA no final da página */
+#cta-portfolio {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#cta-portfolio h3 {
+    color: var(--cor-texto-claro);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#cta-portfolio p {
+    color: var(--cor-texto-claro);
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Contato */
+/* --------------------
+ * Estilização Específica da Página de Contato
+ * -------------------- */
+
+/* Seção do Formulário de Contato */
+#contato-formulario {
+    padding-top: 100px; /* Evita que o conteúdo fique atrás do header */
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#contato-formulario h2 {
+    margin-bottom: 10px;
+}
+
+#contato-formulario p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 15px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: 700;
+    color: var(--cor-texto-principal);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--cor-cinza-claro);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button[type="submit"] {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border: none;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 1.1em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-2px);
+}
+
+/* Seção de Contato Direto */
+#contato-direto {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.botao-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366; /* Cor oficial do WhatsApp */
+    color: var(--cor-texto-claro);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.botao-whatsapp:hover {
+    transform: translateY(-3px);
+}
+
+.botao-whatsapp img {
+    width: 24px;
+    height: auto;
+}
+
+/* Seção de Informações e Localização */
+#nossas-informacoes {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--cor-fundo);
+}
+
+.informacoes-contato p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.informacoes-contato a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.informacoes-contato a:hover {
+    color: var(--cor-secundaria);
+}
+
+.mapa-localizacao {
+    margin-top: 30px;
+}
+
+/*JS*/
+
+/* ===== MENU MOBILE ===== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #006400;
+}
+
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+    flex-direction: column;
+    background: #006400;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  header nav a {
+    display: block;
+    padding: 12px;
+    color: #fff;
+  }
+  header nav.ativo {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+}
+
+/* ===== MODAL / LIGHTBOX (Galeria) ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modal img {
+  max-width: 90%;
+  max-height: 80%;
+  margin-bottom: 20px;
+}
+.modal .fechar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+}
+.modal .anterior,
+.modal .proximo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #006400;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.modal .anterior { left: 20px; }
+.modal .proximo { right: 20px; }
+
+/* ===== DEPOIMENTOS ===== */
+.depoimento-card:first-child {
+  display: block;
+}
+.depoimento-card {
+  display: none; /* o JS controla qual fica visível */
+  background: #f5f5f5;
+  padding: 20px;
+  margin: 10px 0;
+  border-left: 4px solid #006400;
+  border-radius: 8px;
+}
+
+/* ===== BOTÃO VOLTAR AO TOPO ===== */
+.btn-topo {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #006400;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+.btn-topo:hover {
+  background: #004d00;
+}
